@@ -1,0 +1,9 @@
+docker run --name ubuntu-mate-20.04 \
+           --privileged=true \
+           -p 3389:3389 \
+           -e TZ="Europe/Moscow" \
+           -v /Users/pavel/DOCKERS/ubuntu-mate-rdp/CREATEUSERS.TXT:/root/createusers.txt \
+           -v /Users/pavel/DOCKERS/ubuntu-mate-rdp/STARTUP.SH:/root/startup.sh \
+           -v /Users/pavel/DEVEL:/home/devel \
+           -dit --restart unless-stopped \
+           rattydave/docker-ubuntu-xrdp-mate-custom:20.04
